@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 
 enum ButtonType { PRIMARY, PLAIN }
 
@@ -43,7 +44,7 @@ class AppButton extends StatelessWidget {
 Color getButtonColor(context, ButtonType type) {
   switch (type) {
     case ButtonType.PRIMARY:
-      return Theme.of(context).buttonColor;
+      return greenColor;
     case ButtonType.PLAIN:
       return Colors.white;
     default:
@@ -58,6 +59,6 @@ Color getTextColor(context, ButtonType type) {
     case ButtonType.PRIMARY:
       return Colors.white;
     default:
-      return Theme.of(context).buttonColor;
+      return greenColor;
   }
 }

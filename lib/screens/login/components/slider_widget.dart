@@ -90,11 +90,13 @@ class _SliderWidgetState extends State<SliderWidget> {
                     //top: MediaQuery.of(context).size.height / 1.4,
 
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 12,
                         ),
                         Image.asset(slides[index].productImage!),
+                        SizedBox(height: 200),
                         Container(
                           alignment: Alignment.center,
                           child: Text(slides[index].text!,

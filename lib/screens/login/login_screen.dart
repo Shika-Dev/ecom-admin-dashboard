@@ -197,7 +197,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => HomeScreen(activeIndex: 0,)),
                 );
               },
             ),
@@ -305,7 +305,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => HomeScreen(activeIndex: 1,)),
                 );
               },
             ),

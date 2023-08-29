@@ -34,7 +34,7 @@ class MiniInformation extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(new MaterialPageRoute<Null>(
                     builder: (BuildContext context) {
-                      return new FormMaterial();
+                      return new FormMaterial(type: FormType.product,);
                     },
                     fullscreenDialog: true));
               },

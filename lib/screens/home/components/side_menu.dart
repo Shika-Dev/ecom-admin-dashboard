@@ -1,10 +1,12 @@
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_admin_dashboard/screens/home/home_screen.dart';
 
 class SideMenu extends StatelessWidget {
+  final int activeIndex;
   const SideMenu({
-    Key? key,
+    Key? key, required this.activeIndex
   }) : super(key: key);
 
   @override
@@ -28,48 +30,28 @@ class SideMenu extends StatelessWidget {
                 SizedBox(
                   height: defaultPadding,
                 ),
-                Text("Smart HR - Application")
+                Text("Sevva - Admin")
               ],
             )),
             DrawerListTile(
-              title: "Dashboard",
-              svgSrc: "assets/icons/menu_dashbord.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Posts",
+              title: "Product",
               svgSrc: "assets/icons/menu_tran.svg",
-              press: () {},
+              press: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen(activeIndex: 1)));
+              },
+              index: 1, activeIndex: activeIndex,
             ),
             DrawerListTile(
               title: "Pages",
               svgSrc: "assets/icons/menu_task.svg",
               press: () {},
+              index: 2, activeIndex: activeIndex,
             ),
             DrawerListTile(
               title: "Categories",
               svgSrc: "assets/icons/menu_doc.svg",
               press: () {},
-            ),
-            DrawerListTile(
-              title: "Appearance",
-              svgSrc: "assets/icons/menu_store.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Users",
-              svgSrc: "assets/icons/menu_notification.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Tools",
-              svgSrc: "assets/icons/menu_profile.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Settings",
-              svgSrc: "assets/icons/menu_setting.svg",
-              press: () {},
+              index: 3, activeIndex: activeIndex,
             ),
           ],
         ),
@@ -85,10 +67,14 @@ class DrawerListTile extends StatelessWidget {
     required this.title,
     required this.svgSrc,
     required this.press,
+    required this.index,
+    required this.activeIndex
   }) : super(key: key);
 
   final String title, svgSrc;
   final VoidCallback press;
+  final int index;
+  final int activeIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -97,12 +83,12 @@ class DrawerListTile extends StatelessWidget {
       horizontalTitleGap: 0.0,
       leading: SvgPicture.asset(
         svgSrc,
-        color: Colors.white54,
+        color: activeIndex==index? Colors.white : Colors.white54,
         height: 16,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: TextStyle(color: activeIndex == index ? Colors.white : Colors.white54),
       ),
     );
   }

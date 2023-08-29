@@ -8,13 +8,15 @@ class Routes {
   //static variables
   static const String login = '/login';
   static const String home = '/home';
+  static const String product = '/product';
 
   static final routes = <String, WidgetBuilder>{
     // splash: (BuildContext context) => SplashScreen(),
     login: (BuildContext context) => Login(
           title: '',
         ),
-    home: (BuildContext context) => HomeScreen(),
+    home: (BuildContext context) => HomeScreen(activeIndex: 0,),
+    product: (BuildContext context) => HomeScreen(activeIndex: 1),
   };
 }
 
@@ -22,7 +24,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case "/":
       return MaterialPageRoute(builder: (BuildContext context) {
-        return HomeScreen();
+        return HomeScreen(activeIndex: 0,);
+      });
+    case "/product":
+      return MaterialPageRoute(builder: (BuildContext context) {
+        return HomeScreen(activeIndex: 1,);
       });
     default:
       return MaterialPageRoute(builder: (BuildContext context) {

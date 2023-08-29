@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: bgColor,
         primaryColor: greenColor,
         dialogBackgroundColor: secondaryColor,
-        buttonColor: greenColor,
+        buttonTheme: ButtonThemeData(buttonColor: greenColor),
         textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme)
             .apply(bodyColor: Colors.white),
         canvasColor: secondaryColor,
