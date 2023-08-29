@@ -1,0 +1,9 @@
+{"logTime": "0829/190241", "correlationVector":"NeNg8ow6jGDPB8oMkjIDDT.0","action":"FeedSettingFetch_homeCloud", "result":"0", "context":{}}
+{"logTime": "0829/190241", "correlationVector":"NeNg8ow6jGDPB8oMkjIDDT.0","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"", "migrationStage":"", "server":""}}
+{"logTime": "0829/190242", "correlationVector":"kBALeZRaKLX3/aWISpKK1E.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_SoutheastAsia_000j", "migrationStage":"NotStarted", "server":"GENERAL0100000K"}}
+{"logTime": "0829/190242", "correlationVector":"kBALeZRaKLX3/aWISpKK1E","action":"Initial GetUpdates", "result":"", "context":Reason: NEW_CLIENT. cV=kBALeZRaKLX3/aWISpKK1E}
+{"logTime": "0829/190242", "correlationVector":"kBALeZRaKLX3/aWISpKK1E.2","action":"GetUpdates Response", "result":"SYNCER_OK", "context":Received 1 update(s). cV=kBALeZRaKLX3/aWISpKK1E.0;server=GENERAL0100000K;cloudType=Consumer;environment=Prod_SoutheastAsia_000j;migrationStage=NotStarted}
+{"logTime": "0829/190242", "correlationVector":"Uh9YzQ8ilUPyMYZWVvvdsG","action":"Normal GetUpdate request", "result":"", "context":cV=Uh9YzQ8ilUPyMYZWVvvdsG
+Refresh requested types: Encryption Keys}
+{"logTime": "0829/190242", "correlationVector":"Uh9YzQ8ilUPyMYZWVvvdsG.1","action":"SyncServerConnectionManagerRequest", "result":"SYNC_SERVER_OK", "context":{"environment":"Prod_SoutheastAsia_000j", "migrationStage":"NotStarted", "server":"GENERAL0100000P"}}
+{"logTime": "0829/190242", "correlationVector":"Uh9YzQ8ilUPyMYZWVvvdsG.2","action":"GetUpdates Response", "result":"SYNCER_OK", "context":Received 0 update(s). cV=Uh9YzQ8ilUPyMYZWVvvdsG.0;server=GENERAL0100000P;cloudType=Consumer;environment=Prod_SoutheastAsia_000j;migrationStage=NotStarted}

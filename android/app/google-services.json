@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "118312898892",
+    "project_id": "metronom-ecommerce-stg",
+    "storage_bucket": "metronom-ecommerce-stg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118312898892:android:5ce68a53d70f72e7303fe9",
+        "android_client_info": {
+          "package_name": "com.example.smart_admin_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118312898892-96kf4vbgv6gmjm2fn990paedtg5lanij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW1nzfYG3-MgNbFexXHuMMSzDeuRyv514"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118312898892-96kf4vbgv6gmjm2fn990paedtg5lanij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
