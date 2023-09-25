@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/responsive.dart';
 import 'package:smart_admin_dashboard/screens/dashboard/dashboard_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:smart_admin_dashboard/screens/order/order_screen.dart';
 import 'package:smart_admin_dashboard/screens/product/product_screen.dart';
 
 import 'components/side_menu.dart';
@@ -24,25 +25,25 @@ class HomeScreen extends StatelessWidget {
                 // and it takes 1/6 part of the screen
                 child: SideMenu(activeIndex: activeIndex),
               ),
-            if(activeIndex==0)
+            if (activeIndex == 0)
               Expanded(
-              // It takes 5/6 part of the screen
+                // It takes 5/6 part of the screen
                 flex: 5,
                 child: DashboardScreen(),
               ),
-            if(activeIndex==1)
+            if (activeIndex == 1)
               Expanded(
                 // It takes 5/6 part of the screen
                 flex: 5,
                 child: ProductScreen(),
               ),
-            if(activeIndex==2)
+            if (activeIndex == 2)
               Expanded(
                 // It takes 5/6 part of the screen
                 flex: 5,
-                child: DashboardScreen(),
+                child: OrderScreen(),
               ),
-            if(activeIndex==3)
+            if (activeIndex == 3)
               Expanded(
                 // It takes 5/6 part of the screen
                 flex: 5,

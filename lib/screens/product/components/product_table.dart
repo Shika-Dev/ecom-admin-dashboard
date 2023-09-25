@@ -1,12 +1,10 @@
 import 'dart:js_interop';
 
+import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
-import 'package:smart_admin_dashboard/core/utils/colorful_tag.dart';
+import 'package:smart_admin_dashboard/core/constants/currency_format.dart';
 import 'package:smart_admin_dashboard/models/post_response_model.dart';
 import 'package:smart_admin_dashboard/models/product_model.dart';
-import 'package:smart_admin_dashboard/models/recent_user_model.dart';
-import 'package:colorize_text_avatar/colorize_text_avatar.dart';
-import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/screens/forms/input_form.dart';
 import 'package:smart_admin_dashboard/screens/product/datasources/product_datasources.dart';
 
@@ -28,6 +26,7 @@ class _ProductTableState extends State<ProductTable> {
     futureProductModel = getProduct();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,9 +47,9 @@ class _ProductTableState extends State<ProductTable> {
             child: SizedBox(
               width: double.infinity,
               child: FutureBuilder<ProductModel>(
-                future: futureProductModel,
-                builder: (context, snapshot) {
-                  if(snapshot.hasData) {
+                  future: futureProductModel,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
                       var listProduct = snapshot.data!.data;
                       return DataTable(
                         horizontalMargin: 0,
@@ -81,9 +80,9 @@ class _ProductTableState extends State<ProductTable> {
                               productDataRow(listProduct[index], context),
                         ),
                       );
-                    } else return Center(child: CircularProgressIndicator());
-                }
-              ),
+                    } else
+                      return Center(child: CircularProgressIndicator());
+                  }),
             ),
           ),
         ],
@@ -102,9 +101,9 @@ class _ProductTableState extends State<ProductTable> {
           ),
         ),
         DataCell(Text(product.name)),
-        DataCell(Text(product.priceOriginal.toString())),
+        DataCell(Text(CurrencyFormat.convertToIdr(product.priceOriginal, 0))),
         DataCell(Text(product.unit)),
-        DataCell(Text(product.isFeatured?'Yes':'No')),
+        DataCell(Text(product.isFeatured ? 'Yes' : 'No')),
         DataCell(
           Row(
             children: [
@@ -113,7 +112,10 @@ class _ProductTableState extends State<ProductTable> {
                 onPressed: () {
                   Navigator.of(context).push(new MaterialPageRoute<Null>(
                       builder: (BuildContext context) {
-                        return new FormMaterial(type: FormType.updateProduct, product: product,);
+                        return new FormMaterial(
+                          type: FormType.updateProduct,
+                          product: product,
+                        );
                       },
                       fullscreenDialog: true));
                 },
@@ -122,7 +124,8 @@ class _ProductTableState extends State<ProductTable> {
                 width: 6,
               ),
               TextButton(
-                child: Text("Delete", style: TextStyle(color: Colors.redAccent)),
+                child:
+                    Text("Delete", style: TextStyle(color: Colors.redAccent)),
                 onPressed: () {
                   showDialog(
                       context: context,
@@ -172,21 +175,35 @@ class _ProductTableState extends State<ProductTable> {
                                           ),
                                           style: ElevatedButton.styleFrom(
                                               primary: Colors.red),
-                                          onPressed: _loading? () {}: () async {
-                                            setState(() {
-                                              _loading = true;
-                                            });
-                                            PostResponseModel model = await deleteProduct(
-                                                product: product
-                                            );
-                                            setState(() {
-                                              _loading=false;
-                                            });
-                                            if(!model.errors.errorCode.isNull)
-                                              _showDialog(context, model.errors.errorMessage.toString(), false);
-                                            else _showDialog(context, 'Product Updated Successfully', true);
-                                          },
-                                          label: Text(_loading?"Loading...":"Delete"))
+                                          onPressed: _loading
+                                              ? () {}
+                                              : () async {
+                                                  setState(() {
+                                                    _loading = true;
+                                                  });
+                                                  PostResponseModel model =
+                                                      await deleteProduct(
+                                                          product: product);
+                                                  setState(() {
+                                                    _loading = false;
+                                                  });
+                                                  if (!model
+                                                      .errors.errorCode.isNull)
+                                                    _showDialog(
+                                                        context,
+                                                        model
+                                                            .errors.errorMessage
+                                                            .toString(),
+                                                        false);
+                                                  else
+                                                    _showDialog(
+                                                        context,
+                                                        'Product Updated Successfully',
+                                                        true);
+                                                },
+                                          label: Text(_loading
+                                              ? "Loading..."
+                                              : "Delete"))
                                     ],
                                   )
                                 ],
@@ -208,18 +225,16 @@ class _ProductTableState extends State<ProductTable> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Container(
             child: Row(
-              children: [
-                Icon(
-                  success?Icons.verified:Icons.cancel_outlined,
-                  color: bgColor,
-                ),
-                SizedBox(
-                  width: 25,
-                ),
-                Text('${message}'),
-              ],
-            ))));
+      children: [
+        Icon(
+          success ? Icons.verified : Icons.cancel_outlined,
+          color: bgColor,
+        ),
+        SizedBox(
+          width: 25,
+        ),
+        Text('${message}'),
+      ],
+    ))));
   }
 }
-
-

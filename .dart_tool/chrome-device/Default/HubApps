@@ -241,21 +241,46 @@
          },
          "icon": {
             "raster_icon": {
-               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_dark.png/1.3.14/asset",
-               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_hc.png/1.3.14/asset",
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_light.png/1.3.14/asset"
+               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_dark.png/1.3.15/asset",
+               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_hc.png/1.3.15/asset",
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_light.png/1.3.15/asset"
             }
          },
          "location": "header_context_menu",
          "name": "Shopping settings"
       } ],
+      "custom_actions|flight:msEdgeShoppingShorelineHeader|flight:msEdgeShoppingRefresh": [ {
+         "action": {
+            "event": "openShoppingHeaderSettings",
+            "type": "event_action"
+         },
+         "icon": {
+            "raster_icon": {
+               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_dark.png/1.3.15/asset",
+               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_hc.png/1.3.15/asset",
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_light.png/1.3.15/asset"
+            }
+         },
+         "location": "header_context_menu",
+         "name": "Shopping settings"
+      }, {
+         "action": {
+            "target": "sidepane",
+            "type": "url_action"
+         },
+         "icon": {
+            "builtin_icon": "Reload"
+         },
+         "location": "header_button",
+         "name": "Refresh"
+      } ],
       "default_locale": "en",
       "description": "Coupons, compare savings and save money while you shop",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_maximal_dark.png/1.3.14/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_hc.png/1.3.14/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_maximal_light.png/1.3.14/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_maximal_dark.png/1.3.15/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_hc.png/1.3.15/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_shopping_maximal_light.png/1.3.15/asset"
          }
       },
       "id": "523b5ef3-0b10-4154-8b62-10b2ebd00921",
@@ -273,7 +298,7 @@
       "target": {
          "url": "edge://shopping"
       },
-      "version": "1.3.14"
+      "version": "1.3.15"
    }, {
       "capabilities": {
          "resize_disabled": true
@@ -345,6 +370,13 @@
             "show_count_basis": "signal",
             "signal_name": "IsGamesShorelineAutoShow",
             "signal_threshold": 0.5
+         } ],
+         "triggering_configs|flight:msHubAppsGamesAutoShowWGI": [ {
+            "max_show_count": 3,
+            "min_sec_between_auto_show": 86400,
+            "show_count_basis": "signal",
+            "signal_name": "IsTopWgiGames",
+            "signal_threshold": 0.5
          } ]
       },
       "capabilities": {
@@ -371,19 +403,19 @@
       "description": "Play popular games for free",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark.png/1.7.0/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc.png/1.7.0/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light.png/1.7.0/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark.png/1.7.1/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc.png/1.7.1/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light.png/1.7.1/asset"
          },
          "raster_icon|flight:msEdgeHubAppGamesNewIconController": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark_controller.png/1.7.0/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc_controller.png/1.7.0/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light_controller.png/1.7.0/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark_controller.png/1.7.1/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc_controller.png/1.7.1/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light_controller.png/1.7.1/asset"
          },
          "raster_icon|flight:msEdgeHubAppGamesNewIconJoystick": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark_joystick.png/1.7.0/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc_joystick.png/1.7.0/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light_joystick.png/1.7.0/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_dark_joystick.png/1.7.1/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_hc_joystick.png/1.7.1/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_games_maximal_light_joystick.png/1.7.1/asset"
          }
       },
       "id": "96defd79-4015-4a32-bd09-794ff72183ef",
@@ -439,7 +471,7 @@
          "url|flight:msEdgeHubAppWGITopGamesAndSearchbar": "https://www.msn.com/widgets/fullpage/gaming/widget?experiences=CasualGamesHub&sharedHeader=1&item=flights%3Aprg-cg-wgitg,prg-cg-l1wgi",
          "url|flight:msEdgeHubAppWGITopSearchbar": "https://www.msn.com/widgets/fullpage/gaming/widget?experiences=CasualGamesHub&sharedHeader=1&item=flights%3Aprg-cg-l1wgi"
       },
-      "version": "1.7.0"
+      "version": "1.7.1"
    }, {
       "auto_show": {
          "enabled": true,
@@ -459,7 +491,7 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_word.png/1.7.30/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_word.png/1.7.32/asset"
             }
          },
          "location": "hovercard",
@@ -472,7 +504,7 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_excel.png/1.7.30/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_excel.png/1.7.32/asset"
             }
          },
          "location": "hovercard",
@@ -485,7 +517,7 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_power_point.png/1.7.30/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_power_point.png/1.7.32/asset"
             }
          },
          "location": "hovercard",
@@ -507,9 +539,9 @@
       "description": "Access Microsoft 365 apps for free",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_dark.png/1.7.30/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_hc.png/1.7.30/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_light.png/1.7.30/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_dark.png/1.7.32/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_hc.png/1.7.32/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_light.png/1.7.32/asset"
          }
       },
       "id": "64be4f9b-3b81-4b6e-b354-0ba00d6ba485",
@@ -535,7 +567,7 @@
          "url|flight:msEdgeHubAppOfficeCom": "https://www.office.com",
          "url|flight:msEdgeHubAppOfficePlusChina": "https://www.officeplus.cn/?sid=shoreline&endpoint=OPPC&source=OPCNshoreline"
       },
-      "version": "1.7.30"
+      "version": "1.7.32"
    }, {
       "auto_show": {
          "dsat_flyout": {
@@ -620,27 +652,27 @@
       "microfeedback": {
          "area_path": "Features\\Sidebar\\Outlook",
          "dislike": {
-            "description_override": "__MSG_microfeedback_dislike_feedback_dialog_description_override__",
-            "options": [ "__MSG_microfeedback_dislike_option_1__", "__MSG_microfeedback_dislike_option_2__", "__MSG_microfeedback_dislike_option_3__", "__MSG_microfeedback_dislike_option_4__", "__MSG_microfeedback_dislike_option_5__", "__MSG_microfeedback_dislike_option_6__", "__MSG_microfeedback_other_option__" ],
+            "description_override": "How can we improve Outlook in the sidebar?",
+            "options": [ "I don't like that the side pane opens automatically", "It takes up too much space on my screen", "Outlook was not signed in with the correct profile", "The wrong email was opened", "Seeing the email on the side was not helpful to me", "The side pane was slow to open", "Other" ],
             "other_option_support": true,
-            "prompt": "__MSG_microfeedback_dislike_followup_prompt__"
+            "prompt": "Tell us why you are not satisfied"
          },
          "like": {
-            "description_override": "__MSG_microfeedback_like_feedback_dialog_description_override__",
-            "options": [ "__MSG_microfeedback_like_option_1__", "__MSG_microfeedback_like_option_2__", "__MSG_microfeedback_like_option_3__", "__MSG_microfeedback_other_option__" ],
+            "description_override": "Tell us what you like about Outlook in the sidebar",
+            "options": [ "I like that my email opens side-by-side with the web link", "I like that I can keep tabs on my inbox and calendar without switching between tabs", "I like that Microsoft 365 web apps are just a click away", "Other" ],
             "other_option_support": true,
-            "prompt": "__MSG_microfeedback_like_followup_prompt__"
+            "prompt": "Tell us what you like"
          },
          "locations": {
             "auto_open_settings_page": {
                "item_id": 0,
                "item_name": "Auto-open settings page",
-               "prompt": "__MSG_microfeedback_autoopen_settings_prompt__"
+               "prompt": "Are you satisfied with Outlook in the sidebar?"
             },
             "footer": {
                "item_id": 1,
                "item_name": "Outlook sidebar",
-               "prompt": "__MSG_microfeedback_autoopen_footer_prompt__"
+               "prompt": "Was opening this pane helpful to you?"
             }
          },
          "service_id": "39f2d170-852b-4e8b-aa58-04e34218acef"
@@ -701,9 +733,9 @@
          },
          "icon": {
             "raster_icon": {
-               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_dark.png/1.1.11/asset",
-               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_hc.png/1.1.11/asset",
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_light.png/1.1.11/asset"
+               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_dark.png/1.1.12/asset",
+               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_hc.png/1.1.12/asset",
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_settings_light.png/1.1.12/asset"
             }
          },
          "icon|flight:msEdgeEDropSharedHeaderVectorIcon": {
@@ -718,9 +750,9 @@
          },
          "icon": {
             "raster_icon": {
-               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_dark.png/1.1.11/asset",
-               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_hc.png/1.1.11/asset",
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_light.png/1.1.11/asset"
+               "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_dark.png/1.1.12/asset",
+               "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_hc.png/1.1.12/asset",
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_refresh_light.png/1.1.12/asset"
             }
          },
          "icon|flight:msEdgeEDropSharedHeaderVectorIcon": {
@@ -731,11 +763,12 @@
       } ],
       "default_locale": "en",
       "description": "Send files across your mobile and desktop devices",
+      "disabled|device:xbox": true,
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_maximal_dark.png/1.1.11/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_hc.png/1.1.11/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_maximal_light.png/1.1.11/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_maximal_dark.png/1.1.12/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_hc.png/1.1.12/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_edrop_maximal_light.png/1.1.12/asset"
          }
       },
       "id": "92f1b743-e26b-433b-a1ec-912d1f0ad1fa",
@@ -751,7 +784,7 @@
       "target": {
          "url": "edge://e-drop/?shared_header=1"
       },
-      "version": "1.1.11"
+      "version": "1.1.12"
    }, {
       "capabilities": {
          "resize_disabled": true
@@ -1567,7 +1600,8 @@
             "show_count": 3,
             "text": "Was opening this pane helpful to you?"
          },
-         "lifetime|flight:msHubAppTeamsAutoShowTabLifetime": "tab",
+         "lifetime": "tab",
+         "lifetime|flight:msHubAppTeamsAutoShowWindowLifetime": "window",
          "remember_context": {
             "time_to_live_sec": 86400
          },
@@ -1592,9 +1626,9 @@
       },
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_dark.png/1.2.18/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_hc.png/1.2.18/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_light.png/1.2.18/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_dark.png/1.2.19/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_hc.png/1.2.19/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_teams_light.png/1.2.19/asset"
          }
       },
       "id": "bc25fcef-8964-4e72-8287-23e2b496c128",
@@ -1605,27 +1639,27 @@
       "microfeedback": {
          "area_path": "Features\\Sidebar\\Teams",
          "dislike": {
-            "description_override": "__MSG_microfeedback_dislike_feedback_dialog_description_override__",
-            "options": [ "__MSG_microfeedback_dislike_option_1__", "__MSG_microfeedback_dislike_option_2__", "__MSG_microfeedback_dislike_option_3__", "__MSG_microfeedback_dislike_option_4__", "__MSG_microfeedback_dislike_option_5__", "__MSG_microfeedback_dislike_option_6__", "__MSG_microfeedback_other_option__" ],
+            "description_override": "How can we improve Teams in the sidebar?",
+            "options": [ "I don't like that the side pane opens automatically", "It takes up too much space on my screen", "Teams was not signed in with the correct browser", "The wrong chat was opened", "Seeing the chat on the side was not helpful to me", "The side pane was slow to open", "Other" ],
             "other_option_support": true,
-            "prompt": "__MSG_microfeedback_dislike_followup_prompt__"
+            "prompt": "Tell us why you are not satisfied"
          },
          "like": {
-            "description_override": "__MSG_microfeedback_like_feedback_dialog_description_override__",
-            "options": [ "__MSG_microfeedback_like_option_1__", "__MSG_microfeedback_like_option_2__", "__MSG_microfeedback_like_option_3__", "__MSG_microfeedback_other_option__" ],
+            "description_override": "Tell us what you like about Teams in the sidebar",
+            "options": [ "I like that my chat opens side-by-side with the web link", "I like that I can keep tabs on my chat without switching tabs", "I like that Microsoft 365 web apps are just a click away", "Other" ],
             "other_option_support": true,
-            "prompt": "__MSG_microfeedback_like_followup_prompt__"
+            "prompt": "Tell us what you like"
          },
          "locations": {
             "auto_open_settings_page": {
                "item_id": 0,
                "item_name": "Auto-open settings page",
-               "prompt": "__MSG_microfeedback_autoopen_settings_prompt__"
+               "prompt": "Are you satisfied with Teams in the sidebar?"
             },
             "footer": {
                "item_id": 1,
                "item_name": "Teams sidebar",
-               "prompt": "__MSG_microfeedback_autoopen_footer_prompt__"
+               "prompt": "Was opening this pane helpful to you?"
             }
          },
          "service_id": "ef98a99f-f053-44be-939d-5875c41c09b3"
@@ -1638,7 +1672,7 @@
       "target": {
          "url": "https://teams.microsoft.com/embed-client/chats/list?layout=singlePane&hostCtx=edge"
       },
-      "version": "1.2.18"
+      "version": "1.2.19"
    }, {
       "capabilities": {
          "show_domain_in_header": true
@@ -1879,12 +1913,13 @@
    }, {
       "default_locale": "en",
       "description": "Earn valuable Microsoft Rewards just by searching, shopping, and gaming with Microsoft",
+      "disabled|auth:aad": true,
       "flights": [ "msEdgeRewardsInSidebar" ],
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_maximal_dark.png/1.1.2/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_hc.png/1.1.2/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_maximal_light.png/1.1.2/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_maximal_dark.png/1.1.3/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_hc.png/1.1.3/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_rewards_maximal_light.png/1.1.3/asset"
          }
       },
       "id": "698b01b4-557a-4a3b-9af7-a7e8138e8372",
@@ -1896,7 +1931,7 @@
          "url": "https://edgeservices.bing.com/rewards/panelflyout/engagement?channel=bingflyout&partnerId=RewardsHub&isDarkMode=0",
          "url|theme:dark": "https://edgeservices.bing.com/rewards/panelflyout/engagement?channel=bingflyout&partnerId=RewardsHub&isDarkMode=1"
       },
-      "version": "1.1.2"
+      "version": "1.1.3"
    }, {
       "capabilities": {
          "deprecated_hide_header": true,
@@ -1954,6 +1989,50 @@
          "url": "https://bard.google.com/"
       },
       "version": "1.0.1"
+   }, {
+      "default_locale": "en",
+      "description": "Recent Files App",
+      "flights": [ "msEdgeFreeOfficePPTOnlyBundle" ],
+      "icon": {
+         "raster_icon": {
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_whats_new.png/1.0.0/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_whats_new.png/1.0.0/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_whats_new.png/1.0.0/asset"
+         }
+      },
+      "id": "15ed6860-f3e5-4d55-8fff-c2ef2d1e7ebd",
+      "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsFRF90OoZBB6zV8detuBVuwZ/I1khT8+R0+JjANESof5STH5sygsiMrnZ6d0zuDfOT7DL4Ot4GYuGLkCNzs1zTqE3H5h0SkTIUq5HWeNLBGQIdpV49xyZnVFnCA5OHkV6WLgYXwksYxjEf5RI3dREgOzOHVJf2A/03fRgbgRCYJUCDt97ptx3RrtyXkt8IUFMPw3FWyebOBm3EdOz0PCdFVw4PfqbUPuFG+vPmhkFuVLcdCRLg00/S2feHqI1uvGghufNXkKSkNtYo0c7fS3fOzWQIHMJs+z2AknHAoJ0aKBly6Xo/uzLD3n9Y1vd828qhrd9iF1l6Ol4ytVN5aanQIDAQAB",
+      "locales": [ "en" ],
+      "manifest_version": 3,
+      "name": "Recent Files",
+      "on_by_default": true,
+      "on_by_default|device:managed": false,
+      "target": {
+         "url": "edge://free-office-ppt-only/?sharedHeader=1"
+      },
+      "version": "1.0.0"
+   }, {
+      "default_locale": "en",
+      "description": "Help App",
+      "flights": [ "msEdgeHelpHubApp" ],
+      "icon": {
+         "raster_icon": {
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_help.png/1.0.0/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_help.png/1.0.0/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_help.png/1.0.0/asset"
+         }
+      },
+      "id": "b04052f4-597e-4e9b-9380-a26658a23e52",
+      "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+hMWECnLJ8xmCKfxc8R7UaxExnweWZdndHuo+zZbmSobIsrNdqmmqYvr7xo97Yf8lIsjjc2rOihCQYgA/jt8nJJXQdM7cP96FAJTPwdnTzyJpSxypP6e/hFrqROv995k9Nki7v9S8SNBRFEoM3HzaaFz03BhYAU1aGOoZf3CtV07d6/dOJUEGHjgJG6DdKaf93uYbzdXkRrSc31e1Tt/qT6mQhkEAzU4EZS9cc+VcFpFRFAjrL8QYTtf/40//AYInU8es0nTuJ8F/Ly27t+XDzDr0FOG2FZ0U6yhXxEVQx1CVP2UZqDkaUBturK+xJFZqaJYpqEd+kYgoJq7NWveywIDAQAB",
+      "locales": [ "en" ],
+      "manifest_version": 3,
+      "name": "Help",
+      "on_by_default": true,
+      "on_by_default|device:managed": false,
+      "target": {
+         "url": "https://support.microsoft.com/en-us/powerpoint"
+      },
+      "version": "1.0.0"
    } ],
    "manifest_version": "4.0.0"
 }

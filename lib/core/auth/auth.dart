@@ -36,8 +36,11 @@ Future<bool> handleSignIn() async {
         if (model.errors == null || model.errors!.errorCode == null) {
           pref.putString(
               SharedPreferencesManager.keyAccessToken, model.data!.token.token);
+          print(model.data!.token.token);
           setSharedPref(
-              name: user.displayName, token: token, imageUrl: user.photoURL);
+              name: user.displayName,
+              token: model.data!.token.token,
+              imageUrl: user.photoURL);
           return true;
         }
       }
@@ -78,7 +81,7 @@ Future<SignInModel> signInJWT(String token) async {
   var headers = {'Content-Type': 'application/json'};
   Map<String, dynamic> body = {'accessToken': token};
   final response = await http.post(
-      Uri.parse('https://api-stg.sevva.co.id/api/auth/signin'),
+      Uri.parse('https://api.sevva.co.id/api/auth/signin'),
       headers: headers,
       body: json.encode(body));
   return SignInModel.fromJson(json.decode(response.body));

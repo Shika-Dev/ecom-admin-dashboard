@@ -1,7 +1,6 @@
-import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 
 class DailyInfoModel {
   IconData? icon;
@@ -60,7 +59,6 @@ var dailyData = [
   {
     "title": "Employee",
     "volumeData": 1328,
-    "icon": FlutterIcons.user_alt_faw5s,
     "totalStorage": "+ %20",
     "color": primaryColor,
     "percentage": 35,
@@ -106,7 +104,6 @@ var dailyData = [
   {
     "title": "On Leave",
     "volumeData": 1328,
-    "icon": FlutterIcons.message1_ant,
     "totalStorage": "+ %5",
     "color": Color(0xFFFFA113),
     "percentage": 35,
@@ -149,7 +146,6 @@ var dailyData = [
   {
     "title": "Onboarding",
     "volumeData": 1328,
-    "icon": FlutterIcons.comment_alt_faw5s,
     "totalStorage": "+ %8",
     "color": Color(0xFFA4CDFF),
     "percentage": 10,
@@ -192,7 +188,6 @@ var dailyData = [
   {
     "title": "Open Position",
     "volumeData": 1328,
-    "icon": FlutterIcons.heart_faw5s,
     "totalStorage": "+ %8",
     "color": Color(0xFFd50000),
     "percentage": 10,
@@ -235,7 +230,6 @@ var dailyData = [
   {
     "title": "Efficiency",
     "volumeData": 5328,
-    "icon": FlutterIcons.bell_faw5s,
     "totalStorage": "- %5",
     "color": Color(0xFF00F260),
     "percentage": 78,

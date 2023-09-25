@@ -47,14 +47,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB8jnUhDFKo4Zmz_Hu16xGoQlzD649XxrQ',
-    appId: '1:118312898892:web:010e9ae7b66b54e2303fe9',
-    messagingSenderId: '118312898892',
-    projectId: 'metronom-ecommerce-stg',
-    authDomain: 'metronom-ecommerce-stg.firebaseapp.com',
-    storageBucket: 'metronom-ecommerce-stg.appspot.com',
-    measurementId: 'G-RCDXHT4SNB',
-  );
+      apiKey: "AIzaSyDXbzxOUp2U3D0LUSkLJsJFIpWOSWLuSyI",
+      authDomain: "metronom-ecommerce-prod.firebaseapp.com",
+      projectId: "metronom-ecommerce-prod",
+      storageBucket: "metronom-ecommerce-prod.appspot.com",
+      messagingSenderId: "837308985609",
+      appId: "1:837308985609:web:15b92e8ec1e1568ffc63d8",
+      measurementId: "G-VP8PKJNFLN");
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBW1nzfYG3-MgNbFexXHuMMSzDeuRyv514',
@@ -70,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '118312898892',
     projectId: 'metronom-ecommerce-stg',
     storageBucket: 'metronom-ecommerce-stg.appspot.com',
-    iosClientId: '118312898892-c1iltcq6fm88606k26mmufev6p0tevrg.apps.googleusercontent.com',
+    iosClientId:
+        '118312898892-c1iltcq6fm88606k26mmufev6p0tevrg.apps.googleusercontent.com',
     iosBundleId: 'com.example.beybicoAdmin',
   );
 }

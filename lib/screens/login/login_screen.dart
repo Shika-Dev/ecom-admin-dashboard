@@ -163,7 +163,9 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                           ),
                                           style: ElevatedButton.styleFrom(
                                               primary: Colors.red),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
                                           label: Text("Close"))
                                     ],
                                   )

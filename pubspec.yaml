@@ -32,10 +32,6 @@ dependencies:
   provider: ^5.0.0
   fl_chart: ^0.36.1
   google_fonts: ^5.1.0
-  flutter_icons:
-    git:
-      url: https://github.com/adarsh-technocrat/flutter-icons.git
-      branch: null-safety-migration
   json_annotation: ^4.0.1
   intl: ^0.17.0
   table_calendar: ^3.0.7
@@ -48,6 +44,7 @@ dependencies:
   firebase_auth: ^4.8.0
   shared_preferences: ^2.2.0
   google_sign_in: ^6.1.4
+  syncfusion_flutter_pdf: ^21.2.4
 
 dev_dependencies:
   build_runner: ^2.4.6

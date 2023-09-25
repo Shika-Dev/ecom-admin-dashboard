@@ -1,5 +1,10 @@
-2023/08/30-03:12:34.512 2dd0 Reusing MANIFEST C:\Users\PARAMA~1\AppData\Local\Temp\flutter_tools.ed59ae7\flutter_tools_chrome_device.3c1438c8\Default\Asset Store\assets.db/MANIFEST-000001
-2023/08/30-03:12:34.512 2dd0 Recovering log #4
-2023/08/30-03:12:34.517 2dd0 Level-0 table #6: started
-2023/08/30-03:12:34.522 2dd0 Level-0 table #6: 378977 bytes OK
-2023/08/30-03:12:34.525 2dd0 Delete type=0 #4
+2023/09/23-22:31:40.623 638c Reusing MANIFEST C:\Users\PARAMA~1\AppData\Local\Temp\flutter_tools.c32b0a6f\flutter_tools_chrome_device.5953eb2\Default\Asset Store\assets.db/MANIFEST-000001
+2023/09/23-22:31:40.624 638c Recovering log #13
+2023/09/23-22:31:40.629 638c Level-0 table #16: started
+2023/09/23-22:31:40.679 638c Level-0 table #16: 539812 bytes OK
+2023/09/23-22:31:40.695 638c Delete type=2 #3
+2023/09/23-22:31:40.695 638c Delete type=2 #6
+2023/09/23-22:31:40.695 638c Delete type=0 #7
+2023/09/23-22:31:40.695 638c Delete type=2 #9
+2023/09/23-22:31:40.695 638c Delete type=0 #10
+2023/09/23-22:31:40.695 638c Delete type=0 #13

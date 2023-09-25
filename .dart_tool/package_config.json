@@ -236,12 +236,6 @@
       "languageVersion": "3.0"
     },
     {
-      "name": "flutter_icons",
-      "rootUri": "file:///C:/Users/Parama_Artha/AppData/Local/Pub/Cache/git/flutter-icons-0831af6f0f239d20fb9578612d7a893e2a53d044/",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_plugin_android_lifecycle",
       "rootUri": "file:///C:/Users/Parama_Artha/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.15",
       "packageUri": "lib/",
@@ -650,6 +644,18 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "syncfusion_flutter_core",
+      "rootUri": "file:///C:/Users/Parama_Artha/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_core-21.2.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_flutter_pdf",
+      "rootUri": "file:///C:/Users/Parama_Artha/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdf-21.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "table_calendar",
       "rootUri": "file:///C:/Users/Parama_Artha/AppData/Local/Pub/Cache/hosted/pub.dev/table_calendar-3.0.8",
       "packageUri": "lib/",
@@ -728,7 +734,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-08-29T18:18:34.115936Z",
+  "generated": "2023-09-22T15:34:06.968321Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }
