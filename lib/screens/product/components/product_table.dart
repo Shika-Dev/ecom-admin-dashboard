@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:smart_admin_dashboard/core/constants/currency_format.dart';
@@ -187,8 +185,8 @@ class _ProductTableState extends State<ProductTable> {
                                                   setState(() {
                                                     _loading = false;
                                                   });
-                                                  if (!model
-                                                      .errors.errorCode.isNull)
+                                                  if (model.errors.errorCode !=
+                                                      null)
                                                     _showDialog(
                                                         context,
                                                         model

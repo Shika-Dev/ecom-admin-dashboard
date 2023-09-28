@@ -21,12 +21,7 @@ void main() async {
 
 Widget build(BuildContext context) {
   return MultiProvider(
-      providers: [...ApplicationProvider.instance.dependItems],
-      child: FutureBuilder(
-        builder: (context, snapshot) {
-          return MyApp();
-        },
-      ));
+      providers: [...ApplicationProvider.instance.dependItems], child: MyApp());
 }
 
 class MyApp extends StatelessWidget {

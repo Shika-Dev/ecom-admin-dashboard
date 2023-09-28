@@ -1,12 +1,9 @@
-import 'dart:js_interop';
-import 'dart:typed_data';
-
 import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:smart_admin_dashboard/core/widgets/app_button_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/models/category_model.dart';
 import 'package:smart_admin_dashboard/models/post_response_model.dart';
 import 'package:smart_admin_dashboard/models/subcategory_model.dart';
@@ -43,7 +40,8 @@ class _ProductFormState extends State<ProductForm> {
   bool _feature = false;
   PlatformFile? _image;
 
-  List<DropdownMenuItem> subcategoryItem = List<DropdownMenuItem>.empty(growable: true);
+  List<DropdownMenuItem> subcategoryItem =
+      List<DropdownMenuItem>.empty(growable: true);
 
   String subcategory = '';
   String category = '';
@@ -57,16 +55,15 @@ class _ProductFormState extends State<ProductForm> {
 
   late Future<CategoryModel> futureCategoryModel;
 
-  Future<void> _pickImage()async{
-    try{
-      FilePickerResult? image = await FilePickerWeb.platform.pickFiles(
-        type: FileType.image
-      );
-      if(image.isNull) return;
+  Future<void> _pickImage() async {
+    try {
+      FilePickerResult? image =
+          await FilePickerWeb.platform.pickFiles(type: FileType.image);
+      if (image == null) return;
       setState(() {
-        _image = image?.files.first;
+        _image = image.files.first;
       });
-    }catch(error){
+    } catch (error) {
       print(error);
     }
   }
@@ -167,30 +164,44 @@ class _ProductFormState extends State<ProductForm> {
                 elevation: 10.0,
                 borderRadius: BorderRadius.circular(8.0),
                 child: ListTile(
-                  title: FutureBuilder<CategoryModel>(
-                    future: futureCategoryModel,
-                    builder: (context, snapshot) {
-                      if(snapshot.hasData){
-                        List<String> item = snapshot.data!.data.categories.map((e) => e.category).toList();
-                        return DropdownButton(
-                          hint: Text('Select Category'),
-                          value: category==''?null:category,
-                          items: item.map((e) => DropdownMenuItem(child: Text(e), value: e,)).toList(),
-                          onChanged: (dynamic val)async{
-                            SubCategoryModel model= await getSubCategory(val);
-                            setState(() {
-                              subcategoryItem = model.data.subcategories.map((e) =>
-                                  DropdownMenuItem(child: Text(e.subcategory),
-                                    value: e.subcategory,)).toList();
-                              category = val;
-                            });
-                          },
-                        );
-                      } else if(snapshot.hasError) return Text(snapshot.error.toString());
-                      else return SizedBox(width: 50, child: Center(child: CircularProgressIndicator()));
-                    }
-                  )
-                ),
+                    title: FutureBuilder<CategoryModel>(
+                        future: futureCategoryModel,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            List<String> item = snapshot.data!.data.categories
+                                .map((e) => e.category)
+                                .toList();
+                            return DropdownButton(
+                              hint: Text('Select Category'),
+                              value: category == '' ? null : category,
+                              items: item
+                                  .map((e) => DropdownMenuItem(
+                                        child: Text(e),
+                                        value: e,
+                                      ))
+                                  .toList(),
+                              onChanged: (dynamic val) async {
+                                SubCategoryModel model =
+                                    await getSubCategory(val);
+                                setState(() {
+                                  subcategoryItem = model.data.subcategories
+                                      .map((e) => DropdownMenuItem(
+                                            child: Text(e.subcategory),
+                                            value: e.subcategory,
+                                          ))
+                                      .toList();
+                                  category = val;
+                                });
+                              },
+                            );
+                          } else if (snapshot.hasError)
+                            return Text(snapshot.error.toString());
+                          else
+                            return SizedBox(
+                                width: 50,
+                                child:
+                                    Center(child: CircularProgressIndicator()));
+                        })),
               ),
             ),
             SizedBox(height: defaultPadding),
@@ -200,17 +211,16 @@ class _ProductFormState extends State<ProductForm> {
                 elevation: 10.0,
                 borderRadius: BorderRadius.circular(8.0),
                 child: ListTile(
-                  title: DropdownButton(
-                    hint: Text('Select SubCategory'),
-                    items: subcategoryItem,
-                    value: subcategory==''?null:subcategory,
-                    onChanged: (dynamic val){
-                      setState(() {
-                        subcategory = val;
-                      });
-                    },
-                  )
-                ),
+                    title: DropdownButton(
+                  hint: Text('Select SubCategory'),
+                  items: subcategoryItem,
+                  value: subcategory == '' ? null : subcategory,
+                  onChanged: (dynamic val) {
+                    setState(() {
+                      subcategory = val;
+                    });
+                  },
+                )),
               ),
             ),
             SizedBox(height: defaultPadding),
@@ -267,19 +277,25 @@ class _ProductFormState extends State<ProductForm> {
                 borderRadius: BorderRadius.circular(8.0),
                 child: ListTile(
                   leading: Checkbox(
-                    fillColor: MaterialStatePropertyAll(Theme.of(context).hintColor),
+                    fillColor:
+                        MaterialStatePropertyAll(Theme.of(context).hintColor),
                     value: _sale,
-                    onChanged: (value)=>setState(() {
+                    onChanged: (value) => setState(() {
                       _sale = value!;
                     }),
                   ),
-                  title: _sale ? TextField(
-                    controller: _saleController,
-                    decoration: InputDecoration(
-                      hintText: 'Enter Sale Price',
-                      border: InputBorder.none,
-                    ),
-                  ): Text('Sale',style: TextStyle(color: Theme.of(context).hintColor),),
+                  title: _sale
+                      ? TextField(
+                          controller: _saleController,
+                          decoration: InputDecoration(
+                            hintText: 'Enter Sale Price',
+                            border: InputBorder.none,
+                          ),
+                        )
+                      : Text(
+                          'Sale',
+                          style: TextStyle(color: Theme.of(context).hintColor),
+                        ),
                 ),
               ),
             ),
@@ -291,13 +307,17 @@ class _ProductFormState extends State<ProductForm> {
                 borderRadius: BorderRadius.circular(8.0),
                 child: ListTile(
                   leading: Checkbox(
-                    fillColor: MaterialStatePropertyAll(Theme.of(context).hintColor),
+                    fillColor:
+                        MaterialStatePropertyAll(Theme.of(context).hintColor),
                     value: _feature,
-                    onChanged: (value)=>setState(() {
+                    onChanged: (value) => setState(() {
                       _feature = value!;
                     }),
                   ),
-                  title: Text('Featured',style: TextStyle(color: Theme.of(context).hintColor),),
+                  title: Text(
+                    'Featured',
+                    style: TextStyle(color: Theme.of(context).hintColor),
+                  ),
                 ),
               ),
             ),
@@ -305,32 +325,38 @@ class _ProductFormState extends State<ProductForm> {
             Container(
               padding: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 10.0),
               child: Material(
-                elevation: 10.0,
-                borderRadius: BorderRadius.circular(8.0),
-                child: _image.isNull? ElevatedButton(
-                  onPressed: (){
-                    _pickImage();
-                  },
-                  child: Text('Select Image'),
-                ):SizedBox(width: 300, height: 300, child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Image.memory(Uint8List.fromList(_image!.bytes!), fit: BoxFit.fitWidth,)),
-                    Positioned(
-                        top: 15,
-                        right: 15,
-                        child: GestureDetector(
-                            onTap: ()=>setState(() {
-                              _image = null;
-                            }),
-                            child: Icon(Icons.cancel_outlined)))
-                  ],
-                ))
-              ),
+                  elevation: 10.0,
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: _image == null
+                      ? ElevatedButton(
+                          onPressed: () {
+                            _pickImage();
+                          },
+                          child: Text('Select Image'),
+                        )
+                      : SizedBox(
+                          width: 300,
+                          height: 300,
+                          child: Stack(
+                            children: [
+                              Align(
+                                  alignment: Alignment.center,
+                                  child: Image.memory(
+                                    Uint8List.fromList(_image!.bytes!),
+                                    fit: BoxFit.fitWidth,
+                                  )),
+                              Positioned(
+                                  top: 15,
+                                  right: 15,
+                                  child: GestureDetector(
+                                      onTap: () => setState(() {
+                                            _image = null;
+                                          }),
+                                      child: Icon(Icons.cancel_outlined)))
+                            ],
+                          ))),
             ),
             SizedBox(height: defaultPadding),
-
             Visibility(
               maintainSize: true,
               maintainAnimation: true,
@@ -342,31 +368,35 @@ class _ProductFormState extends State<ProductForm> {
                 child: Center(
                   child: AppButton(
                     type: ButtonType.PRIMARY,
-                    text: _loading?"Loading...":"Add Product",
-                    onPressed: _loading? () {}: () async {
-                      setState(() {
-                        _loading = true;
-                      });
-                      PostResponseModel model = await addProduct(
-                        name: _nameController.text,
-                        price: _priceController.text,
-                        category: category,
-                        subCategory: subcategory,
-                        image: _image!.bytes as List<int>,
-                        imageName: _image!.name,
-                        unit: _unitController.text,
-                        desc: _descController.text,
-                        priceSale: _saleController.text,
-                        isFeatured: _feature,
-                        productDetail: _productDetailController.text
-                      );
-                      setState(() {
-                        _loading=false;
-                      });
-                      if(!model.errors.errorCode.isNull)
-                        _showDialog(context, model.errors.errorMessage.toString(), false);
-                      else _showDialog(context, 'Product Added Successfully', true);
-                    },
+                    text: _loading ? "Loading..." : "Add Product",
+                    onPressed: _loading
+                        ? () {}
+                        : () async {
+                            setState(() {
+                              _loading = true;
+                            });
+                            PostResponseModel model = await addProduct(
+                                name: _nameController.text,
+                                price: _priceController.text,
+                                category: category,
+                                subCategory: subcategory,
+                                image: _image!.bytes as List<int>,
+                                imageName: _image!.name,
+                                unit: _unitController.text,
+                                desc: _descController.text,
+                                priceSale: _saleController.text,
+                                isFeatured: _feature,
+                                productDetail: _productDetailController.text);
+                            setState(() {
+                              _loading = false;
+                            });
+                            if (model.errors.errorCode != null)
+                              _showDialog(context,
+                                  model.errors.errorMessage.toString(), false);
+                            else
+                              _showDialog(
+                                  context, 'Product Added Successfully', true);
+                          },
                   ),
                 ),
               ),
@@ -383,7 +413,7 @@ class _ProductFormState extends State<ProductForm> {
             child: Row(
       children: [
         Icon(
-          success?Icons.verified:Icons.cancel_outlined,
+          success ? Icons.verified : Icons.cancel_outlined,
           color: bgColor,
         ),
         SizedBox(

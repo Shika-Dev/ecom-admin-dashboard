@@ -1,15 +1,8 @@
-import 'dart:js_interop';
-import 'dart:typed_data';
-
-import 'package:file_picker/_internal/file_picker_web.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:smart_admin_dashboard/core/widgets/app_button_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/models/category_model.dart';
 import 'package:smart_admin_dashboard/models/post_response_model.dart';
-import 'package:smart_admin_dashboard/models/subcategory_model.dart';
 import 'package:smart_admin_dashboard/screens/product/datasources/product_datasources.dart';
 
 class AddNewSubCategory extends StatelessWidget {
@@ -72,23 +65,33 @@ class _SubCategoryFormState extends State<SubCategoryForm> {
                     title: FutureBuilder<CategoryModel>(
                         future: futureCategoryModel,
                         builder: (context, snapshot) {
-                          if(snapshot.hasData){
-                            List<String> item = snapshot.data!.data.categories.map((e) => e.category).toList();
+                          if (snapshot.hasData) {
+                            List<String> item = snapshot.data!.data.categories
+                                .map((e) => e.category)
+                                .toList();
                             return DropdownButton(
                               hint: Text('Select Category'),
-                              value: category==''?null:category,
-                              items: item.map((e) => DropdownMenuItem(child: Text(e), value: e,)).toList(),
-                              onChanged: (dynamic val)async{
+                              value: category == '' ? null : category,
+                              items: item
+                                  .map((e) => DropdownMenuItem(
+                                        child: Text(e),
+                                        value: e,
+                                      ))
+                                  .toList(),
+                              onChanged: (dynamic val) async {
                                 setState(() {
                                   category = val;
                                 });
                               },
                             );
-                          } else if(snapshot.hasError) return Text(snapshot.error.toString());
-                          else return SizedBox(width: 50, child: Center(child: CircularProgressIndicator()));
-                        }
-                    )
-                ),
+                          } else if (snapshot.hasError)
+                            return Text(snapshot.error.toString());
+                          else
+                            return SizedBox(
+                                width: 50,
+                                child:
+                                    Center(child: CircularProgressIndicator()));
+                        })),
               ),
             ),
             SizedBox(height: defaultPadding),
@@ -126,22 +129,26 @@ class _SubCategoryFormState extends State<SubCategoryForm> {
                 child: Center(
                   child: AppButton(
                     type: ButtonType.PRIMARY,
-                    text: _loading?"Loading...":"Add Sub Category",
-                    onPressed: _loading? () {}: () async {
-                      setState(() {
-                        _loading = true;
-                      });
-                      PostResponseModel model = await addSubCategory(
-                        category: category,
-                        subcategory: _subcategoryController.text
-                      );
-                      setState(() {
-                        _loading=false;
-                      });
-                      if(!model.errors.errorCode.isNull)
-                        _showDialog(context, model.errors.errorMessage.toString(), false);
-                      else _showDialog(context, 'Sub Category Added Successfully', true);
-                    },
+                    text: _loading ? "Loading..." : "Add Sub Category",
+                    onPressed: _loading
+                        ? () {}
+                        : () async {
+                            setState(() {
+                              _loading = true;
+                            });
+                            PostResponseModel model = await addSubCategory(
+                                category: category,
+                                subcategory: _subcategoryController.text);
+                            setState(() {
+                              _loading = false;
+                            });
+                            if (model.errors.errorCode != null)
+                              _showDialog(context,
+                                  model.errors.errorMessage.toString(), false);
+                            else
+                              _showDialog(context,
+                                  'Sub Category Added Successfully', true);
+                          },
                   ),
                 ),
               ),
@@ -158,7 +165,7 @@ class _SubCategoryFormState extends State<SubCategoryForm> {
             child: Row(
       children: [
         Icon(
-          success?Icons.verified:Icons.cancel_outlined,
+          success ? Icons.verified : Icons.cancel_outlined,
           color: bgColor,
         ),
         SizedBox(

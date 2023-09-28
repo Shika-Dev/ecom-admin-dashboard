@@ -1,15 +1,7 @@
-import 'dart:js_interop';
-import 'dart:typed_data';
-
-import 'package:file_picker/_internal/file_picker_web.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:smart_admin_dashboard/core/constants/color_constants.dart';
 import 'package:smart_admin_dashboard/core/widgets/app_button_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:smart_admin_dashboard/models/category_model.dart';
 import 'package:smart_admin_dashboard/models/post_response_model.dart';
-import 'package:smart_admin_dashboard/models/subcategory_model.dart';
 import 'package:smart_admin_dashboard/screens/product/datasources/product_datasources.dart';
 
 class AddNewCategory extends StatelessWidget {
@@ -89,21 +81,25 @@ class _CategoryFormState extends State<CategoryForm> {
                 child: Center(
                   child: AppButton(
                     type: ButtonType.PRIMARY,
-                    text: _loading?"Loading...":"Add Category",
-                    onPressed: _loading? () {}: () async {
-                      setState(() {
-                        _loading = true;
-                      });
-                      PostResponseModel model = await addCategory(
-                        category: _categoryController.text
-                      );
-                      setState(() {
-                        _loading=false;
-                      });
-                      if(!model.errors.errorCode.isNull)
-                        _showDialog(context, model.errors.errorMessage.toString(), false);
-                      else _showDialog(context, 'Category Added Successfully', true);
-                    },
+                    text: _loading ? "Loading..." : "Add Category",
+                    onPressed: _loading
+                        ? () {}
+                        : () async {
+                            setState(() {
+                              _loading = true;
+                            });
+                            PostResponseModel model = await addCategory(
+                                category: _categoryController.text);
+                            setState(() {
+                              _loading = false;
+                            });
+                            if (model.errors.errorCode != null)
+                              _showDialog(context,
+                                  model.errors.errorMessage.toString(), false);
+                            else
+                              _showDialog(
+                                  context, 'Category Added Successfully', true);
+                          },
                   ),
                 ),
               ),
@@ -120,7 +116,7 @@ class _CategoryFormState extends State<CategoryForm> {
             child: Row(
       children: [
         Icon(
-          success?Icons.verified:Icons.cancel_outlined,
+          success ? Icons.verified : Icons.cancel_outlined,
           color: bgColor,
         ),
         SizedBox(

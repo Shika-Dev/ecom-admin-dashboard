@@ -39,7 +39,7 @@ Future<PostResponseModel> addProduct(
     return PostResponseModel.fromJson(json.decode(responsed.body));
   } else {
     print(responsed.body);
-    throw false;
+    return PostResponseModel.fromJson(json.decode(responsed.body));
   }
 }
 
@@ -145,7 +145,7 @@ Future<PostResponseModel> updateProduct(
     return PostResponseModel.fromJson(json.decode(responsed.body));
   } else {
     print(responsed.body);
-    throw false;
+    return PostResponseModel.fromJson(json.decode(responsed.body));
   }
 }
 
